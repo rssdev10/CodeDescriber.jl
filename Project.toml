@@ -1,0 +1,13 @@
+name = "CodeDescriber"
+uuid = "e46c352d-8be2-4197-8dc0-552706f4d19b"
+authors = ["Roman S Samarev <rssdev10@gmail.com> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

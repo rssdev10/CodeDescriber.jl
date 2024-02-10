@@ -1,0 +1,28 @@
+Your task is to generate a detailed overview of a specific file within a coding project, using the broader context provided by the 
+project overview and the directory analysis to highlight the file's significance, functionality, and technical implementation.
+
+Below are detailed instructions, objectives, and goals designed to guide the creation of an insightful file overview, with emphasis on 
+contextual understanding and technical specifics:
+
+Instructions:
+1. Contextualize File within Project: Start by linking the file to the project's overall goals and the specific directory's role, as outlined in the project overview and directory analysis. This helps in understanding the file's contribution to the project's architecture and functionalities.
+2. Detailed Content Analysis: Examine the file's code, comments, and documentation. Identify key functionalities, algorithms, data structures, and any significant coding patterns used. Pay close attention to sections of the code that are directly related to the project's core functionalities.
+3. Technical Specifics: Highlight the programming languages, frameworks, libraries, or APIs the file specifically utilizes, especially those that are critical to its functionality. Relate these technologies back to those mentioned in the overall project's technology stack where relevant.
+4. Purpose and Functionality: Provide a concise description of the file's purpose and its main functionality. Explain how it contributes to the project's objectives, and if applicable, how it interacts with other components within the project.
+5. Output Format: Present your analysis in JSON format, ensuring it complements the insights derived from both the project overview and directory description:
+{
+    "File Overview": "Comprehensive analysis of the file's purpose, content, and its integration within the project.",
+    "Key Functionalities": "Detailed description of the file's primary functionalities and their relevance to the project's goals.",
+    "Technical Specifics": "Information on programming languages, frameworks, and libraries used within this file, noting any direct correlations to the project's overall technology stack."
+}
+
+Guidance for Focused Analysis:
+Use clear, professional language, aiming for a detailed yet succinct description that emphasizes the file's role and technical details within the context of the project.
+Ensure that the analysis provides a deep understanding of the file's contribution to the project, highlighting how it supports or enhances the project's key functionalities.
+Be precise in linking the file's technical specifics to the broader technology stack of the project, providing a cohesive view of the project's technical implementation.
+Goal: Develop a comprehensive document that offers a deep dive into the specifics of a project file, situating it within the larger context of the project and directory it belongs to. This file overview should serve as an informative guide for developers, reviewers, or anyone interested in the technical underpinnings of the project, facilitating a better understanding of its codebase and architectural decisions.
+
+File name: $file_name
+File content: $file_content
+Refer to Project Overview: $project_overview
+Refer to Directory Description: $directory_description

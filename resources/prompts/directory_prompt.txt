@@ -1,0 +1,41 @@
+Your task is to produce an in-depth and accurate overview of a specific directory within a coding project, leveraging insights from 
+the previously generated project overview to contextualize the directory's role, structure, and contribution to the project's 
+overarching goals.
+
+Below are detailed instructions, objectives, and goals designed to guide the creation of a comprehensive and insightful directory
+overview, with an emphasis on integrating knowledge from the project-wide analysis.
+
+Instructions:
+1. Integrate Project Overview Insights: Begin by reviewing the project overview to understand the project's purpose, 
+key functionalities, and technology stack. Use this information to frame your analysis of the directory within the context of the 
+project's overall architecture and objectives.
+2. Deep Dive into Directory Structure: Examine the layout of the chosen directory, including subdirectories and files. 
+Note how the organization and grouping of files contribute to the project's functionality.
+3. Analyze Files and Subdirectories: Summarize the role and functionality of each significant file and subdirectory, drawing on 
+file names, contents, and inline documentation. Highlight how these elements support the project's key functionalities identified in 
+the project overview.
+4. Specific Technologies and Libraries: Identify and detail the programming languages, frameworks, and libraries used within this 
+directory, especially those that are critical to the directory's functionality. Relate this back to the technology stack outlined in 
+the project overview where relevant.
+5. Directory Content Analysis: Pay close attention to any documentation, README files, or inline comments within the directory for 
+additional insights into its role within the larger project.
+6. Output Format: Structure your findings in JSON format for clarity and ease of reference, ensuring alignment with insights derived 
+from the project overview:
+{
+    "Directory Overview": "Detailed description of the directory's purpose, structure, and its integration within the project context.",
+    "Significant Files and Subdirectories": [
+        {"File/Subdirectory Name": "Role and functionality, emphasizing its contribution to the project's goals"},
+        ...
+    ],
+    "Key Technologies and Libraries": "Specific technologies and libraries used, highlighting any direct correlation to the project's overall technology stack."
+}
+
+Guidance for Integrative Analysis:
+Employ clear, professional language, aiming for detailed yet concise descriptions that reflect an understanding of the directory's significance as informed by the project overview.
+Focus on providing insights that underscore the directory's contribution to the project's broader goals, ensuring that the analysis complements the information gleaned from the project overview.
+Prioritize clarity and relevance in the description of each component's functionality and purpose, especially as they relate to the project's key functionalities and technology stack.
+Goal: Craft a detailed document that not only explores the specific functions and structure of a project directory but also ties these insights back to the broader project context provided by the project overview. This directory analysis should serve as a detailed reference point, enriching the understanding of the project's architecture and facilitating a deeper appreciation of the directory's role within the project.
+
+Directory name: $dir_name
+Directory content: $directory_content
+Refer to Project Overview: $project_overview

@@ -1,0 +1,32 @@
+You task is to craft a brief and insightful overview of a coding project, focusing on succinctly summarizing its purpose, 
+extracting key functionalities from the code and comments, and identifying the essential programming languages and frameworks that 
+define its technological foundation.
+
+Below are detailed instructions, objectives, and goals designed to guide the creation of a comprehensive and insightful project overview.
+Instructions:
+1. Conduct a Thorough Code and Comment Review: Examine the project's directory layout, source files, and inline documentation. 
+Identify crucial components, modules, and classes, paying special attention to descriptive comments that elucidate their role and 
+utility.
+2. Project Purpose: Summarize the project's objectives, using code, and introductory or high-level comments as a guide.
+3. Key Functionalities: Identify and list the project's primary features, focusing on those explicitly mentioned or exemplified in the code and inline documentation.
+4. Technology Stack: Note the programming languages, and highlight only the most crucial frameworks and libraries that are central to the project's functionality.
+5. Project Content Analysis: Utilize the content provided after the "Project content:".
+6. Output format: Return result in JSON format with the following structure:
+{
+    "Project name": "Derived project name",
+    "Project Purpose": "Derived project purpose from analysis.",
+    "Key Functionalities": "List of key functionalities identified.",
+    "Technology Stack": "Summary of essential programming languages and frameworks used."
+}
+
+Guidance for Conciseness:
+* Employ clear, professional language, and aim for brevity. Deliver information that directly contributes to an understanding of the 
+  project's core value.
+* Limit the scope of extracted details to those most critical for grasping the project's purpose and functionality.
+* When in doubt or if details are unclear without further context, prioritize conciseness and relevance to the project's main objectives.
+
+Goal: Create a focused document that succinctly communicates the project's intent, what it does, and the primary technologies it 
+leverages. This overview should serve as a quick reference to grasp the essence and technological underpinnings of the project, 
+suitable for a technical audience looking for an entry point into understanding or evaluating the project.
+
+Project content: $project_content

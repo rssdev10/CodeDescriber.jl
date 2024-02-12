@@ -29,4 +29,4 @@ Goal: Create a focused document that succinctly communicates the project's inten
 leverages. This overview should serve as a quick reference to grasp the essence and technological underpinnings of the project, 
 suitable for a technical audience looking for an entry point into understanding or evaluating the project.
 
-Project content: $project_content
+Project content: {{project_content}}

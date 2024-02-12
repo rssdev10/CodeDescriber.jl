@@ -22,7 +22,7 @@ Ensure that the analysis provides a deep understanding of the file's contributio
 Be precise in linking the file's technical specifics to the broader technology stack of the project, providing a cohesive view of the project's technical implementation.
 Goal: Develop a comprehensive document that offers a deep dive into the specifics of a project file, situating it within the larger context of the project and directory it belongs to. This file overview should serve as an informative guide for developers, reviewers, or anyone interested in the technical underpinnings of the project, facilitating a better understanding of its codebase and architectural decisions.
 
-File name: $file_name
-File content: $file_content
-Refer to Project Overview: $project_overview
-Refer to Directory Description: $directory_description
+File name: {{file_name}}
+File content: {{file_content}}
+Refer to Project Overview: {{project_overview}}
+Refer to Directory Description: {{directory_description}}

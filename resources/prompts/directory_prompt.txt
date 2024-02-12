@@ -36,6 +36,6 @@ Focus on providing insights that underscore the directory's contribution to the 
 Prioritize clarity and relevance in the description of each component's functionality and purpose, especially as they relate to the project's key functionalities and technology stack.
 Goal: Craft a detailed document that not only explores the specific functions and structure of a project directory but also ties these insights back to the broader project context provided by the project overview. This directory analysis should serve as a detailed reference point, enriching the understanding of the project's architecture and facilitating a deeper appreciation of the directory's role within the project.
 
-Directory name: $dir_name
-Directory content: $directory_content
-Refer to Project Overview: $project_overview
+Directory name: {{dir_name}}
+Directory content: {{directory_content}}
+Refer to Project Overview: {{project_overview}}

@@ -1,3 +1,5 @@
+using JSON3
+
 should_path_be_processed(path::AbstractString) =
     any(startswith("."), splitpath(path))
 
@@ -15,7 +17,7 @@ is_project_file(fn::AbstractString) =
 """
 Converting Dict to a String
 """
-function dict_to_string(dict::Dict{T, T} where T <: AbstractString, separator = "")
+function dict_to_string(dict::Dict{T,T} where {T<:AbstractString}, separator="")
     parts = String[]
     for (key, value) in dict
         push!(parts, "$(key): $(value)")
@@ -24,13 +26,11 @@ function dict_to_string(dict::Dict{T, T} where T <: AbstractString, separator = 
     return dict_string
 end
 
-vector_to_string(vec::Vector{T}, separator = "") where T <: AbstractString = 
-    separator == "" ? join(vec, ", \n") : join(vec, ", \n" * separator * "\n") 
+vector_to_string(vec::Vector{T}, separator="") where {T<:AbstractString} =
+    separator == "" ? join(vec, ", \n") : join(vec, ", \n" * separator * "\n")
 
-function json_to_text(input_file::AbstractString)
-    input_path = joinpath(@__DIR__, "..", "data", input_file)
-    json_data = JSON.parsefile(input_path)
-
-    pretty_json = JSON.json(json_data, 4)
-    return pretty_json
+function json_to_text(json_data::AbstractDict)
+    io = IOBuffer()
+    JSON3.pretty(io, json_data, JSON3.AlignmentContext(alignment=:Colon, indent=4))
+    return String(take!(io))
 end

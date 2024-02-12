@@ -3,6 +3,12 @@ uuid = "e46c352d-8be2-4197-8dc0-552706f4d19b"
 authors = ["Roman S Samarev <rssdev10@gmail.com> and contributors"]
 version = "1.0.0-DEV"
 
+[deps]
+JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
+Mocking = "78c3b35d-d492-501b-9361-3d52fe80e533"
+Mustache = "ffc61752-8dc7-55ee-8c37-f3e9cdd09e70"
+OpenAI = "e9f21f70-7185-4079-aca2-91159181367c"
+
 [compat]
 julia = "1"
 

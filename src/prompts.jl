@@ -1,12 +1,12 @@
-using JSON
+using Mustache
 
 
 """
-Reading peompt from the .txt file
+Reading prompt from the .txt file
 """
-get_prompt(filename) = 
-    joinpath(@__DIR__, "..", "resources", "prompts", filename) |> 
-    filepath -> read(filepath, String)
+load_prompts(filename)::Mustache.MustacheTokens =
+    joinpath(@__DIR__, "..", "resources", "prompts", filename) |>
+    filepath -> Mustache.load(filepath)
 
 function project_replacements(project_files)
     project_content = dict_to_string(project_files, "\n---------\n")
@@ -15,25 +15,29 @@ end
 
 function dir_replacements(dir_name::String, files::Vector{AbstractString}, project_overview)
     directory_content = vector_to_string(files, "\n---------\n")
-    return Dict("dir_name" => dir_name, 
-                "directory_content" => directory_content,
-                "project_overview" => project_overview)
+    return Dict(
+        "dir_name" => dir_name,
+        "directory_content" => directory_content,
+        "project_overview" => project_overview
+    )
 end
 
-function file_replacements(fn::String, text::String, project_overview_path::AbstractString, dir_overview::AbstractString)
-    return Dict("file_name" => fn,
-                "file content" => file_content, 
-                "directory_content" => directory_content,
-                "project_overview" => project_overview)
+function file_replacements(fn::String, file_content::String, project_overview_path::AbstractString, dir_overview::AbstractString)
+    return Dict(
+        "file_name" => fn,
+        "file content" => file_content,
+        "directory_content" => dir_overview,
+        "project_overview" => project_overview_path
+    )
 end
 
 """
 Replacement part of the prompt with the specific contextual information
 """
-function replace_placeholders(prompt::AbstractString, replacements::Dict{T, T} where T <: AbstractString)
-    for (placeholder, replacement) in replacements
-        prompt = replace(prompt, "\$$placeholder" => replacement)
-    end
-    return prompt
+function get_prompts(prompt_fn::AbstractString, replacements::Dict{T,T})::String where {T<:AbstractString}
+    tpl = load_prompts(prompt_fn)
+    return Mustache.render(tpl, replacements)
 end
 
+const EMPTY_REPLACEMENTS = Dict{String,String}()
+get_prompts(prompt_fn::AbstractString) = get_prompts(prompt_fn, EMPTY_REPLACEMENTS)

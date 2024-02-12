@@ -37,8 +37,14 @@ function walk(entry_dir::String; output=:file)::Context
         end
     end
 
-    for dir in context.directories
-        files = filter(startswith(dir), context.files)
+    push!(context.directories, ".")
+
+    for dir in sort(context.directories)
+        files = if isequal(dir, ".")
+            filter(fn -> length(splitpath(fn)) === 1, context.files)
+        else
+            filter(startswith(dir), context.files)
+        end
         context.dir_descriptions[dir] = describe_dir(context, dir, files)
     end
 
@@ -48,7 +54,7 @@ function walk(entry_dir::String; output=:file)::Context
             fn,
             open(f -> read(f, String), joinpath(normalized_entry_dir, fn))
         )
-        for fn in context.files
+        for fn in sort(context.files)
     )
 
     return context
